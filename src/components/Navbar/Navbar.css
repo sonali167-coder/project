@@ -1,0 +1,91 @@
+.navbar {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff; /* or use a gradient/dark color if you want */
+  border-radius: 50px; /* makes the whole navbar rounded */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* soft shadow for floating effect */
+  margin: 16px auto; 
+  width: 90%; /* keep some gap on sides */
+  max-width: 1200px; /* don’t stretch too wide */
+}
+
+/* Logo */
+.navbar .logo {
+  width: 150px;
+}
+
+/* Menu */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  color: #49557e;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.navbar-menu li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* .navbar-menu li:hover {
+  color: #ff5722;
+} */
+
+/* Right side (icons + button) */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.navbar-right img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.navbar-right img:hover {
+  transform: scale(1.1);
+}
+
+/* Cart Icon with dot */
+.navbar-search-icon {
+  position: relative;
+}
+
+.navbar-search-icon .dot {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 10px;
+  height: 10px;
+  background: #ff5722;
+  border-radius: 50%;
+}
+
+/* Sign in button */
+.navbar-right button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.navbar-right button:hover {
+  background-color: #e64a19;
+}
+
+.navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #e64a19;
+}
