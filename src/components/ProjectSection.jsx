@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
-
+import ScrollReveal from "./ScrollReveal";
 
 export const ProjectSection = () => {
     const [projects, setProjects] = useState([]);
@@ -31,19 +31,25 @@ export const ProjectSection = () => {
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Featured <span className="text-primary">Projects</span>
-        </h2>
+        <ScrollReveal animation="slideUp" className="text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Featured <span className="text-primary">Projects</span>
+          </h2>
+        </ScrollReveal>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects fetched directly from my GitHub
-          profile.
-        </p>
+        <ScrollReveal animation="fadeIn" delay={0.2} className="text-center mb-12">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Here are some of my recent projects fetched directly from my GitHub
+            profile.
+          </p>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.id}
+          {projects.map((project, index) => (
+            <ScrollReveal 
+              key={project.id} 
+              animation="scale" 
+              delay={0.1 * (index % 6)}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
               <div className="h-48 overflow-hidden bg-secondary/20 flex items-center justify-center">
@@ -93,11 +99,11 @@ export const ProjectSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <ScrollReveal animation="slideUp" delay={0.4} className="text-center mt-12">
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
@@ -105,7 +111,7 @@ export const ProjectSection = () => {
           >
             Check My Github <ArrowRight size={16} />
           </a>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
 

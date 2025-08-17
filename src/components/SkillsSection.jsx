@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import ScrollReveal from "./ScrollReveal";
 
 const skills = [
   // Frontend
@@ -30,11 +31,13 @@ export const SkillsSection = () => {
     const filteredSkills = skills.filter((skill) => activeCategory === "all" || activeCategory === skill.category )
     return <section id="skills" className="py-24 px-4 relative bg-secondary/30">
         <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl text-center font-bold mb-12">
-                My<span className="text-primary">Skills</span>
-            </h2>
+            <ScrollReveal animation="slideUp" className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold">
+                    My<span className="text-primary">Skills</span>
+                </h2>
+            </ScrollReveal>
 
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <ScrollReveal animation="fadeIn" delay={0.2} className="flex flex-wrap justify-center gap-4 mb-12">
                 {
                     categories.map((category, key) => (
                         <button key={key} className={cn(
@@ -47,11 +50,16 @@ export const SkillsSection = () => {
                         </button>
                     ))
                 }
-            </div>
+            </ScrollReveal>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredSkills.map((skill, key) => (
-                    <div key={key} className="bg-card p-6 rounded-lg shadow-2xs card-hover">
+                    <ScrollReveal 
+                        key={key} 
+                        animation="scale" 
+                        delay={0.1 * (key % 6)}
+                        className="bg-card p-6 rounded-lg shadow-2xs card-hover"
+                    >
                         <div className="text-left mb-4">
                             <h3 className="font-semibold text-lg">{ skill.name }</h3>
                         </div>
@@ -61,7 +69,7 @@ export const SkillsSection = () => {
                         <div className="text-right mt-1">
                             <span className="text-sm text-muted-foreground">{skill.level + "%"}</span>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 ))}
             </div>
         </div>
