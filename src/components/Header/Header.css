@@ -1,0 +1,58 @@
+.header {
+  height: 60vh;
+  margin: 30px auto;
+  background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)),
+              url('/header_img.png') no-repeat center center;
+  background-size: cover;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 6vw;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.header-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 500px;
+  padding: 2rem;
+  animation: fadeIn 3s;
+}
+
+.header-contents h2 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: white;
+  font-size: clamp(28px, 4.5vw, 48px);
+}
+
+.header-contents p {
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 400;
+  color: #f8f8f8;
+}
+
+
+.header-contents button {
+  background: #ff5a5f;
+  color: white;
+  border: none;
+  font-weight: 500;
+  padding: 10px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.header-contents button:hover {
+  background: #ff3b3f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+

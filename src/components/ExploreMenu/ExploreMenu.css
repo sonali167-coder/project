@@ -1,0 +1,66 @@
+.explore-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.explore-menu h1 {
+    color: #ff5722; /* vibrant orange for heading */
+    font-weight: 600;
+}
+
+.explore-menu-text {
+    max-width: 60%;
+    color: #555; /* soft gray text */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.explore-menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin: 20px 0px;
+    overflow-x: scroll;
+}
+
+.explore-menu-list::-webkit-scrollbar {
+    display: none; /* hides scrollbar */
+}
+
+.explore-menu-list img {
+    width: 7.5vw;
+    min-width: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.2s;
+    border: 3px solid transparent;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.08);
+}
+
+.explore-menu-list img:hover {
+    border: 3px solid #ff5722; /* orange ring */
+    transform: scale(1.05);
+}
+
+.explore-menu-list p {
+    margin-top: 10px;
+    color: #333; /* dark text */
+    font-size: max(1.4vw, 16px);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.explore-menu-list p:hover {
+    color: #ff5722; /* orange on hover */
+}
+
+.explore-menu-list hr {
+    margin: 10px 0px;
+    height: 2px;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 2px;
+}
