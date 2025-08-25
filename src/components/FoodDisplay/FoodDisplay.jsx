@@ -7,7 +7,6 @@ const FoodDisplay = ({category}) => {
 
     
     const {food_list} = useContext(storeContext)
-    //console.log(food_list)
 
   return (
     <div className='food-display' id='food-display'>
