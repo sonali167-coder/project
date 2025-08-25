@@ -31,16 +31,24 @@ const StoreContextProvider = (props) => {
         });
     };
 
-    useEffect(() =>{
-        console.log(cartItem)
-    }, [cartItem])
+    // useEffect(() =>{
+    //     console.log(cartItem)
+    // }, [cartItem])
+
+    const cartTotal = () => {
+        return food_list.reduce((sum, product) => {
+        const qty = cartItem[product._id] || 0;
+        return sum + product.price * qty;
+        }, 0);
+    };
 
     const contextValue = {
         food_list,
         cartItem,
         setCartItem,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        cartTotal
     }
     return(
         <storeContext.Provider  value={contextValue}>
